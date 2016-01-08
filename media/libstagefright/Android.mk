@@ -169,6 +169,10 @@ ifeq ($(TARGET_HAS_LEGACY_HSR),true)
 LOCAL_CFLAGS += -DLEGACY_HSR
 endif
 
+ifeq ($(BOARD_USE_64BITMEDIA),true)
+LOCAL_CFLAGS += -DUSE_64BITMEDIA
+endif
+
 LOCAL_CFLAGS += -Wno-multichar -Werror -Wno-error=deprecated-declarations -Wall
 
 LOCAL_C_INCLUDES += $(call project-path-for,qcom-media)/mm-core/inc
